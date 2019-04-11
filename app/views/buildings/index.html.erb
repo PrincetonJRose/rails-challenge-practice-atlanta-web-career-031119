@@ -1,0 +1,18 @@
+<br>
+<h1 align="center" style="color: green"><b><u>List of all available buildings</u>:</b></h1>
+<br>
+<br>
+<table border="1" style="width:100%">
+    <tr>
+        <th align="center"><b><u>Building Name</u>:</b></th>
+        <th align="center"><b><u>Floors Available</u>:</b></th>
+    </tr>
+    <% @buildings.each do |building| %>
+    <tr>
+        <td align="center"><%= link_to building.name, building_path(building) %></td>
+        <td align="center">
+        <%= building.number_of_floors - building.offices.size %>
+        </td>
+    </tr>
+    <% end %>
+</table>
