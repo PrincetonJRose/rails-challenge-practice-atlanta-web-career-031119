@@ -5,4 +5,11 @@
 <p><u>Country</u>: <%= @building.country %></p>
 <p><u>Address</u>: <%= @building.address %></p>
 <p><u>Number of floors</u>: <%= @building.number_of_floors %></p>
-<p><u>Rent per office</u>:</p>
+<p><u>Rent per office</u>: <%= @building.rent_per_floor.round(2) %></p>
+<p><u>Total rent being payed currently</u>: <%= (@building.rent_per_floor* @building.offices.size).round(2) %></p>
+<br>
+<br>
+<%= link_to "Edit building information", building_path(@building) %>
+<br>
+<br>
+<%= link_to "Back to building list.", buildings_path %>
